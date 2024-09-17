@@ -4,6 +4,7 @@ import Hero from './components/Hero/hero'
 import Products from './components/Products/Products'
 import AOS from "aos";
 import TopProducts from './components/TopProducts/TopProducts';
+import Banner from './components/Banner/Banner';
 
 const App = () => {
 
@@ -23,6 +24,7 @@ const App = () => {
       <Hero />
       <Products />
       <TopProducts />
+      <Banner />
     </div>
   )
 }
