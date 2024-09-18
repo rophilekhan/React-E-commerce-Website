@@ -1,10 +1,10 @@
 import React from "react";
-import footerLogo from "../../assets/logo.png"; // Update the path based on your project structure
-import Banner from "../../assets/website/footer-pattern.jpg"; // Update the banner path
+import footerLogo from "../../assets/logo.png"; 
+import Banner from "../../assets/website/footer-pattern.jpg"; // 
 import { FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow } from "react-icons/fa6";
 import { FaMobileAlt } from "react-icons/fa";
 
-// Footer background styling with the pattern
+// Footer background 
 const BannerImg = {
   backgroundImage: `url(${Banner})`,
   backgroundPosition: "bottom",
@@ -42,7 +42,7 @@ const Footer = () => {
           {/* Company Details */}
           <div className="py-8 px-4">
             <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3">
-              <img src={footerLogo} alt="Shopsy Logo" className="max-w-[50px]" />Shopsy
+              <img src={footerLogo} alt="ShopVibe Logo" className="max-w-[50px]" />ShopVibe
             </h1>
             <p className="text-gray-300">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis itaque sequi ipsa! Aliquam, praesentium maxime!
