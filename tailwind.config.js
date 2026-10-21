@@ -9,17 +9,20 @@ export default {
     extend: {
       colors: {
         primary: "#fea928",
-        secondary: "ed8900"
+        secondary: "#ed8900",
+      },
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
       },
       container: {
         center: true,
-        padding:{
+        padding: {
           DEFAULT: "1rem",
           sm: "3rem",
-        }
-      }
+        },
+      },
     },
   },
   plugins: [],
-}
+};
 

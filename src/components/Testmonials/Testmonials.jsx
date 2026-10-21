@@ -1,30 +1,40 @@
 import React from 'react';
 import Slider from 'react-slick';
+import { FaQuoteRight } from 'react-icons/fa6';
+import { FaStar } from 'react-icons/fa6';
 
 const TestimonialData = [
   {
     id: 1,
-    name: 'Rophile Khan',
-    text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum officia, natus debitis voluptas perferendis ducimus excepturi reiciendis commodi maxime.',
-    img: 'https://picsum.photos/101/101',
+    name: 'Sophia Martinez',
+    role: 'Fashion Blogger',
+    text: 'AuraMart has completely elevated my wardrobe. The fabrics are exceptional, the cut of the ethnic kurtis is so flattering, and shipping arrived 2 days earlier than expected!',
+    img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80',
+    rating: 5,
   },
   {
     id: 2,
-    name: 'Tahreem Azhar',
-    text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum officia, natus debitis voluptas perferendis ducimus excepturi reiciendis commodi maxime.',
-    img: 'https://picsum.photos/102/102',
+    name: 'Marcus Chen',
+    role: 'Creative Director',
+    text: 'I ordered the resort shirt and denim collection. The stitching details and breathability are top notch. Easily the best online shopping experience I have had this year.',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
+    rating: 5,
   },
   {
     id: 3,
-    name: 'Ali',
-    text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum officia, natus debitis voluptas perferendis ducimus excepturi reiciendis commodi maxime.',
-    img: 'https://picsum.photos/104/104',
+    name: 'Amina Al-Mansoor',
+    role: 'Verified Buyer',
+    text: 'The colors look even more vibrant in person than on screen! Customer support was super responsive when I had a sizing question. AuraMart is now my go-to boutique.',
+    img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+    rating: 5,
   },
   {
     id: 4,
-    name: 'Hussain',
-    text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum officia, natus debitis voluptas perferendis ducimus excepturi reiciendis commodi maxime.',
-    img: 'https://picsum.photos/103/103',
+    name: 'David Reynolds',
+    role: 'Stylist',
+    text: 'Phenomenal blend of modern streetwear and timeless casual classics. The materials feel substantial and hold their shape after multiple washes.',
+    img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
+    rating: 5,
   },
 ];
 
@@ -33,11 +43,11 @@ const Testimonials = () => {
     dots: true,
     arrows: false,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
-    cssEase: 'linear',
+    autoplaySpeed: 3000,
+    cssEase: 'ease-in-out',
     pauseOnHover: true,
     pauseOnFocus: true,
     responsive: [
@@ -68,40 +78,52 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="py-10 mb-10">
+    <div id="testimonials" className="py-16 mb-12 bg-white dark:bg-gray-900 duration-200">
       <div className="container">
         {/* header section */}
-        <div className="text-center mb-10 max-w-[600px] mx-auto">
-          <p data-aos="fade-up" className="text-sm text-primary">
-            What Our Customers are Saying
+        <div className="text-center mb-12 max-w-[600px] mx-auto">
+          <p data-aos="fade-up" className="text-sm font-semibold uppercase tracking-wider text-primary">
+            What Our Customers Are Saying
           </p>
-          <h1 data-aos="fade-up" className="text-3xl font-bold">
-            Testimonials
-          </h1>
-          <p data-aos="fade-up" className="text-xs text-gray-400">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, sed esse.
+          <h2 data-aos="fade-up" className="text-3xl sm:text-4xl font-bold mt-1 text-gray-900 dark:text-white">
+            Customer Testimonials
+          </h2>
+          <p data-aos="fade-up" className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+            Real stories from real shoppers who found their signature vibe with AuraMart.
           </p>
         </div>
+
         {/* testimonial card */}
-        <div data-aos= "zoom-in">
+        <div data-aos="zoom-in">
           <Slider {...settings}>
             {TestimonialData.map((data) => (
-              <div key={data.id} className="my-6">
-                <div className="flex flex-col items-center gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl dark:bg-gray-800 bg-primary/10 relative">
-                  <img
-                    src={data.img}
-                    alt={data.name}
-                    className="rounded-full w-20 h-20"
-                  />
-                  <div className="text-center space-y-3">
-                    <p className="text-xs text-gray-500">{data.text}</p>
-                    <h1 className="text-xl font-bold text-black/80 dark:text-light">
+              <div key={data.id} className="my-6 px-3">
+                <div className="flex flex-col items-center gap-4 shadow-md hover:shadow-xl transition-all duration-300 py-8 px-6 rounded-2xl dark:bg-gray-800 bg-amber-50/40 dark:border dark:border-gray-700 relative overflow-hidden h-full min-h-[290px] justify-between">
+                  <div className="flex flex-col items-center gap-3">
+                    <img
+                      src={data.img}
+                      alt={data.name}
+                      className="rounded-full w-16 h-16 object-cover border-2 border-primary shadow-sm"
+                    />
+                    <div className="flex gap-1 text-yellow-400 text-xs">
+                      {[...Array(data.rating)].map((_, i) => (
+                        <FaStar key={i} />
+                      ))}
+                    </div>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 text-center italic relative z-10 line-clamp-4">
+                    "{data.text}"
+                  </p>
+
+                  <div className="text-center">
+                    <h3 className="text-base font-bold text-gray-900 dark:text-white">
                       {data.name}
-                    </h1>
+                    </h3>
+                    <p className="text-xs text-primary font-medium">{data.role}</p>
                   </div>
-                  <div>
-                    <p className="text-black/20 text-9xl font-serif absolute top-0 right-0">,,</p>
-                  </div>
+
+                  <FaQuoteRight className="text-primary/10 dark:text-primary/5 text-6xl absolute top-3 right-3 pointer-events-none" />
                 </div>
               </div>
             ))}
